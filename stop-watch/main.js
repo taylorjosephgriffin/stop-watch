@@ -1,3 +1,8 @@
-let $button = document.querySelector('start')
+let $button = document.querySelector('#start')
+let $time = document.querySelector('#time')
 
-$button.addEventListener('click', false)
+function startTime() {
+  return $time.innerHTML++
+}
+
+$button.addEventListener('click', startTime, false)
