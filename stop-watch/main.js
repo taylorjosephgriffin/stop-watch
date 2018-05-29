@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-
 let $button = document.querySelector('#start')
 let $time = document.querySelector('#time')
 let isRunning = false
