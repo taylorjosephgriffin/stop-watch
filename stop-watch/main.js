@@ -1,8 +1,12 @@
+/* eslint-disable no-unused-vars */
+
 let $button = document.querySelector('#start')
 let $time = document.querySelector('#time')
+let isRunning = false
 
 function startTime() {
-  return $time.innerHTML++
+  isRunning = true
+  $time.innerHTML++
 }
 
 $button.addEventListener('click', function () {
