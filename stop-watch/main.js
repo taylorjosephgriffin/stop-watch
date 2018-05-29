@@ -5,4 +5,6 @@ function startTime() {
   return $time.innerHTML++
 }
 
-$button.addEventListener('click', startTime, false)
+$button.addEventListener('click', function () {
+  setInterval(startTime, 1000)
+}, false)
