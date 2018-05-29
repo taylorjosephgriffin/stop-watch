@@ -13,6 +13,7 @@ $button.addEventListener('click', function () {
     interval = setInterval(startTime, 1000)
     setTimeout(function () {
       $button.textContent = 'pause'
+      $button.style.backgroundColor = '#FF9F9F'
     }, 1000)
 
   }
@@ -20,5 +21,6 @@ $button.addEventListener('click', function () {
     isRunning = false
     clearInterval(interval)
     $button.textContent = 'start'
+    $button.style.backgroundColor = 'transparent'
   }
 }, false)
