@@ -13,6 +13,7 @@ $reset.hidden = true
 $start.addEventListener('click', function () {
   if (!isRunning) {
     isRunning = true
+    $reset.hidden = false
     interval = setInterval(startTime, 1000)
     setTimeout(function () {
       $start.textContent = 'pause'
