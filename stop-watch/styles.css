@@ -117,6 +117,4 @@ body {
 
 #confirm:focus { outline: none; }
 
-#confirm:hover { font-size: 22px; }
-
 #confirm:active { top: -68px; }
