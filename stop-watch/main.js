@@ -28,3 +28,7 @@ $start.addEventListener('click', function () {
     $start.style.backgroundColor = 'transparent'
   }
 }, false)
+
+$reset.addEventListener('click', function () {
+  clearInterval(interval)
+}, false)
