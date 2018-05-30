@@ -4,7 +4,7 @@ const $reset = document.querySelector('#reset')
 const $form = document.querySelector('#timelimit')
 const $confirm = document.querySelector('#confirm')
 const $reached = document.querySelector('#reached')
-let timeLimit = null
+let timeLimit = 0
 let limitSet = false
 let isRunning = false
 let intervalStart = null
@@ -13,21 +13,14 @@ $reset.hidden = true
 $reached.hidden = true
 
 function startTime() {
-  if ($time.textContent < timeLimit && timeLimit !== null) {
-    $time.textContent++
-  }
-  else if (timeLimit === null || timeLimit === 0 || timeLimit === '') {
-    $time.textContent++
-  }
-  else {
+  if ($time.textContent === timeLimit) {
     $reached.hidden = false
     $time.className = 'expired'
     clearInterval(intervalStart)
   }
-}
-
-function resetTime() {
-  $time.textContent = 0
+  else {
+    $time.textContent++
+  }
 }
 
 $start.addEventListener('click', function () {
@@ -40,7 +33,7 @@ $start.addEventListener('click', function () {
       $start.style.backgroundColor = '#FF9F9F'
     }, 1000)
   }
-  else if (isRunning) {
+  else {
     isRunning = false
     clearInterval(intervalStart)
     $start.textContent = 'start'
@@ -50,7 +43,7 @@ $start.addEventListener('click', function () {
 
 $reset.addEventListener('click', function () {
   clearInterval(intervalStart)
-  resetTime()
+  $time.textContent = 0
   isRunning = false
   $reset.hidden = true
   $reached.hidden = true
@@ -58,7 +51,7 @@ $reset.addEventListener('click', function () {
   $start.textContent = 'start'
   $start.style.backgroundColor = 'transparent'
   if (limitSet) {
-    timeLimit = 0
+    $form.value = 0
     $confirm.style.backgroundColor = 'transparent'
     $confirm.textContent = 'SET'
   }
