@@ -35,6 +35,10 @@ body {
   margin-top: 12rem;
 }
 
+.expired {
+  color: rgb(232, 114, 115);
+}
+
 #start {
   position: relative;
   left: -75px;
@@ -118,3 +122,16 @@ body {
 #confirm:focus { outline: none; }
 
 #confirm:active { top: -68px; }
+
+#reached {
+  position: relative;
+  top: -10px;
+  left: -178px;
+  font-family: "Helvetica", sans-serif;
+  font-weight: 200;
+  font-size: 15px;
+  font-style: italic;
+  text-transform: uppercase;
+  color: rgb(232, 114, 115);
+  margin-left: -115px;
+}
