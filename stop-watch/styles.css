@@ -77,3 +77,46 @@ body {
 #reset:hover { font-size: 35px; }
 
 #reset:active { top: 2px; }
+
+#timelimit {
+  position: relative;
+  left: -160px;
+  width: 150px;
+  height: 46.5px;
+  font-family: "Helveticaneue", sans-serif;
+  font-weight: 200;
+  font-size: 17px;
+  font-style: italic;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 20px;
+  margin-left: 50%;
+  background-color: transparent;
+  border: 1px solid black;
+}
+
+#timelimit:focus { outline: none; }
+
+#confirm {
+  position: relative;
+  top: -70px;
+  left: 10px;
+  width: 150px;
+  height: 50px;
+  font-family: "Helveticaneue", sans-serif;
+  font-weight: 200;
+  font-size: 17px;
+  font-style: italic;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 20px;
+  margin-left: 50%;
+  background-color: transparent;
+  border: 1px solid black;
+}
+
+#confirm:focus { outline: none; }
+
+#confirm:hover { font-size: 22px; }
+
+#confirm:active { top: -68px; }
