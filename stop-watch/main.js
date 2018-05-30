@@ -37,6 +37,7 @@ $reset.addEventListener('click', function () {
   clearInterval(intervalStart)
   resetTime()
   isRunning = false
+  $reset.hidden = true
   $start.textContent = 'start'
   $start.style.backgroundColor = 'transparent'
 }, false)
