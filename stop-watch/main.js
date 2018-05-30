@@ -1,5 +1,6 @@
-let $button = document.querySelector('#start')
-let $time = document.querySelector('#time')
+const $start = document.querySelector('#start')
+const $time = document.querySelector('#time')
+const $reset = document.querySelector('#reset')
 let isRunning = false
 let interval = null
 
@@ -7,20 +8,22 @@ function startTime() {
   $time.innerHTML++
 }
 
-$button.addEventListener('click', function () {
+$reset.hidden = true
+
+$start.addEventListener('click', function () {
   if (!isRunning) {
     isRunning = true
     interval = setInterval(startTime, 1000)
     setTimeout(function () {
-      $button.textContent = 'pause'
-      $button.style.backgroundColor = '#FF9F9F'
+      $start.textContent = 'pause'
+      $start.style.backgroundColor = '#FF9F9F'
     }, 1000)
 
   }
   else if (isRunning) {
     isRunning = false
     clearInterval(interval)
-    $button.textContent = 'start'
-    $button.style.backgroundColor = 'transparent'
+    $start.textContent = 'start'
+    $start.style.backgroundColor = 'transparent'
   }
 }, false)
