@@ -2,10 +2,14 @@ const $start = document.querySelector('#start')
 const $time = document.querySelector('#time')
 const $reset = document.querySelector('#reset')
 let isRunning = false
-let interval = null
+let intervalStart = null
 
 function startTime() {
-  $time.innerHTML++
+  $time.textContent++
+}
+
+function resetTime() {
+  $time.textContent = 0
 }
 
 $reset.hidden = true
@@ -14,7 +18,7 @@ $start.addEventListener('click', function () {
   if (!isRunning) {
     isRunning = true
     $reset.hidden = false
-    interval = setInterval(startTime, 1000)
+    intervalStart = setInterval(startTime, 1000)
     setTimeout(function () {
       $start.textContent = 'pause'
       $start.style.backgroundColor = '#FF9F9F'
@@ -23,12 +27,16 @@ $start.addEventListener('click', function () {
   }
   else if (isRunning) {
     isRunning = false
-    clearInterval(interval)
+    clearInterval(intervalStart)
     $start.textContent = 'start'
     $start.style.backgroundColor = 'transparent'
   }
 }, false)
 
 $reset.addEventListener('click', function () {
-  clearInterval(interval)
+  clearInterval(intervalStart)
+  resetTime()
+  isRunning = false
+  $start.textContent = 'start'
+  $start.style.backgroundColor = 'transparent'
 }, false)
