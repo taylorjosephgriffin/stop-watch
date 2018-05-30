@@ -16,10 +16,10 @@ body {
 
 #title {
   position: relative;
-  top: 300px;
+  top: 10rem;
   width: 100%;
   font-weight: 400;
-  font-size: 100px;
+  font-size: 4rem;
   text-transform: uppercase;
   font-style: italic;
   text-align: center;
@@ -27,15 +27,15 @@ body {
 }
 
 #time {
-  font-size: 100px;
+  font-size: 4rem;
   font-weight: 200;
   text-transform: uppercase;
   font-style: italic;
   text-align: center;
-  margin-top: 350px;
+  margin-top: 12rem;
 }
 
-button {
+#start {
   position: relative;
   left: -75px;
   width: 150px;
@@ -50,8 +50,30 @@ button {
   border: 1px solid black;
 }
 
-button:focus { outline: none; }
+#start:focus { outline: none; }
 
-button:hover { font-size: 35px; }
+#start:hover { font-size: 35px; }
 
-button:active { top: 2px; }
+#start:active { top: 2px; }
+
+#reset {
+  position: relative;
+  left: -75px;
+  width: 150px;
+  height: 50px;
+  font-family: "Helveticaneue", sans-serif;
+  font-weight: 200;
+  font-size: 30px;
+  font-style: italic;
+  text-transform: uppercase;
+  margin-top: 20px;
+  margin-left: 50%;
+  background-color: transparent;
+  border: 1px solid black;
+}
+
+#reset:focus { outline: none; }
+
+#reset:hover { font-size: 35px; }
+
+#reset:active { top: 2px; }

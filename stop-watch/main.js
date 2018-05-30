@@ -1,26 +1,43 @@
-let $button = document.querySelector('#start')
-let $time = document.querySelector('#time')
+const $start = document.querySelector('#start')
+const $time = document.querySelector('#time')
+const $reset = document.querySelector('#reset')
 let isRunning = false
-let interval = null
+let intervalStart = null
 
 function startTime() {
-  $time.innerHTML++
+  $time.textContent++
 }
 
-$button.addEventListener('click', function () {
+function resetTime() {
+  $time.textContent = 0
+}
+
+$reset.hidden = true
+
+$start.addEventListener('click', function () {
   if (!isRunning) {
     isRunning = true
-    interval = setInterval(startTime, 1000)
+    $reset.hidden = false
+    intervalStart = setInterval(startTime, 1000)
     setTimeout(function () {
-      $button.textContent = 'pause'
-      $button.style.backgroundColor = '#FF9F9F'
+      $start.textContent = 'pause'
+      $start.style.backgroundColor = '#FF9F9F'
     }, 1000)
 
   }
   else if (isRunning) {
     isRunning = false
-    clearInterval(interval)
-    $button.textContent = 'start'
-    $button.style.backgroundColor = 'transparent'
+    clearInterval(intervalStart)
+    $start.textContent = 'start'
+    $start.style.backgroundColor = 'transparent'
   }
+}, false)
+
+$reset.addEventListener('click', function () {
+  clearInterval(intervalStart)
+  resetTime()
+  isRunning = false
+  $reset.hidden = true
+  $start.textContent = 'start'
+  $start.style.backgroundColor = 'transparent'
 }, false)
